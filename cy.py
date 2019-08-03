@@ -248,3 +248,69 @@ hint: 不断/10求商，直到...退出循环
 hint: 不断...直到...
 '''
 
+
+'''
+# 输入n，打印第n行的杨辉三角数列list
+# 方法一
+def Triangles(n):
+	L = [1]
+	for i in range(n-1):
+		if i > 0:
+			A = L+[0]
+			B = [0]+L
+			L=[]
+			for u in range(len(A)):
+				L.append(A[u]+B[u])
+		yield L
+
+a = Triangles(20)
+for i in a:
+	print(i)
+
+
+# 方法二
+def Triangles(n):
+	L =[1]
+	for i in range(n-1):
+		A = L+[0]
+		B = [0]+L
+		L=[]
+		for u in range(len(A)):
+			L.append(A[u]+B[u])		
+	return L
+
+for i in range(10):
+	print(Triangles(i+1))
+
+'''
+
+# 输入有序list a和b 输出a和b的合并有序列表
+a = [0,2,4,6,8]
+b = [1,2,3,3,9]
+i = 0
+j = 0
+c = []
+while i < len(a) and j< len(b):
+	if a[i] > b[j]:
+		c.append(b[j])
+		j = j+1
+	elif a[i] == b[j]:
+		c.append(a[i])
+		c.append(b[j])
+		i = i+1
+		j = j+1
+	else:
+		c.append(a[i])
+		i = i+1
+
+if j < len(b):
+	c = c + b[j:len(b)]
+else:
+	c = c + a[i:len(a)]
+
+print(c)
+
+
+
+
+ 
