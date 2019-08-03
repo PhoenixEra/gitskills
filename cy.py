@@ -233,21 +233,88 @@ print(MiddleNum([3,2,5,7,6]))
 
 '''
 
+'''
 # 1.可以从控制台连续输入数字，当输入的数字为0时不可以再输入
-''' 
-hint: input() 死循环
-'''
 
-# 2.任意输入一个整数（小于10位），求它一共有多少位
-'''
-hint: 不断/10求商，直到...退出循环
-'''
+ hint: input() 死循环
 
-# 3.一张纸的厚度大约是0.08mm，对折多少次之后能达到珠穆朗玛峰的高度（8848.13米）
-'''
-hint: 不断...直到...
-'''
+while True:
+	a = input ('Please input a number:')
+	b = int(a)
+	if b == 0:
+		print ('END!')
+		break
 
+
+# 2.任意输入一个整数（小于10位），求它一共有多少位 hint: 不断/10求商，直到...退出循环er
+a = input('please input an integer(digits<10)')
+i = int(a)
+i_count =1
+while True:
+	if i/10 >0.9:
+		i_count = i_count+1
+		i = i/10
+	else:
+		print(i_count)
+		break
+
+	
+# 3.一张纸的厚度大约是0.08mm，对折多少次之后能达到珠穆朗玛峰的高度（8848.13米） hint: 不断...直到...
+
+a = 0.08
+count = 1
+while a < 8848130:
+	a = a * 2
+	count= count + 1
+print(count)
+
+
+print(list(range(10)))
+print(list(range(88,100,2)))
+
+T=[]
+for x in range (1,10):
+	T.append(x*(x+1))
+print(T)
+
+print([x*(x+1) for x in range (1,10)])
+
+print([x*(x+1) for x in range (1,50) if x%5 ==0])
+print([x+(x+1) for x in range (1,50) if x%5 ==0])
+
+print([a+b for a in 'ct11' for b in 'yt345'])
+
+import os
+[d for d in os.listdir('.')]
+
+d = {'x': 'A', 'y': 'B', 'z': 'C' }
+for a,b in d.items():
+	print(a,'-->',b)
+
+d = {'x': 'A', 'y': 'B', 'z': 'C' }
+print([a+'->'+b for a,b in d.items()])
+
+D = ['x','A','y','B','z','C']
+print([d.lower() for d in D])
+
+L1 = ['Hello', 'World', 18, 'Apple', None]
+L2 = [d.lower() for d in L1 if isinstance(d,str)==True]
+print(L2)
+if L2 == ['hello', 'world', 'apple']:
+    print('测试通过!')
+else:
+    print('测试失败!')
+
+
+L1 = ['Hello', 'World', 18, 'Apple', None]
+L2 = []
+for u in L1:
+	if isinstance(u,str) == True:
+		L2.append(u.lower())
+	else:
+		L2.append(u)
+print(L2)
+'''
 
 '''
 # 输入n，打印第n行的杨辉三角数列list
@@ -284,6 +351,8 @@ for i in range(10):
 
 '''
 
+'''
+
 # 输入有序list a和b 输出a和b的合并有序列表
 a = [0,2,4,6,8]
 b = [1,2,3,3,9]
@@ -310,6 +379,7 @@ else:
 
 print(c)
 
+'''
 
 
 
