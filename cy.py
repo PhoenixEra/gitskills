@@ -381,6 +381,20 @@ print(c)
 
 '''
 
+class Bank(object):
+	def __init__ (self,addrs = 'No.1, tian zi road',store = 0 ,hr = []):
+		self.addrs = addrs
+		self.store = store
+		self.hr = hr
+	def print_addrs(self):
+		print('%s' %(self.addrs))
+
+	def bank_increase(self,money):
+		self.store =self.store + money
+	def bank_enroll(self,name):
+		self.hr.append(name)
+
+
 
 
  
