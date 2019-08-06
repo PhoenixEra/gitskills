@@ -381,6 +381,8 @@ print(c)
 
 '''
 
+'''
+
 class Bank(object):
 	def __init__ (self,addrs = 'No.1, tian zi road',store = 0 ,hr = []):
 		self.addrs = addrs
@@ -394,7 +396,58 @@ class Bank(object):
 	def bank_enroll(self,name):
 		self.hr.append(name)
 
+class zhanan(object):
+	def __init__ (self,name,age,job,waiting):
+		self.name = name
+		self.age = age
+		self.job = job
+		self.waiting = waiting
 
+	def print_waiting(self):
+		print(self.waiting)
 
+	def add_girl(self,**girl):
+		self.waiting.update(girl)
+
+	def pop_girl(self,name):
+		self.waiting.pop(name)
+
+		
+hy = zhanan('ghy',22,'student',{'hxy':'A'})
+hy.add_girl(aq = 'B')
+hy.add_girl(zje ='A')
+hy.add_girl(llq ='C')
+hy.print_waiting()
+hy.pop_girl('aq')
+hy.print_waiting()
+'''
+
+class Student(object):
+    def __init__(self, name, gender):
+        self.__name = name
+        self.__gender = gender
+    def get_gender(self):
+    	return self.__gender
+    def set_gender(self,gender):
+    	if gender == 'male' or gender =='female':
+    		self.__gender = gender
+    	else:
+    		self.__gender = self.__gender
+    	
+bart = Student('Bart', 'male')
+print(bart.get_gender())
+bart.set_gender('dog')
+print(bart.get_gender())
+'''
+if bart.get_gender() != 'male':
+    print('测试失败1!')
+else:
+    bart.set_gender('female')
+    if bart.get_gender() != 'female':
+        print('测试失败2!')
+    else:
+        print('测试成功!')
+
+'''
 
  
