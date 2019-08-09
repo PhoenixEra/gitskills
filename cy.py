@@ -420,7 +420,7 @@ hy.add_girl(llq ='C')
 hy.print_waiting()
 hy.pop_girl('aq')
 hy.print_waiting()
-'''
+
 
 class Student(object):
     def __init__(self, name, gender):
@@ -438,7 +438,7 @@ bart = Student('Bart', 'male')
 print(bart.get_gender())
 bart.set_gender('dog')
 print(bart.get_gender())
-'''
+
 if bart.get_gender() != 'male':
     print('测试失败1!')
 else:
@@ -447,7 +447,38 @@ else:
         print('测试失败2!')
     else:
         print('测试成功!')
-
 '''
 
- 
+import math
+class Shape(object):
+	def __init__():
+		pass
+	def Area(self):
+		pass
+
+class Circle(Shape):
+	def __init__(self,r):
+		self.r = r
+	def Area(self):
+		return math.pi * self.r * self.r
+
+class Retangle(Shape):
+	def __init__(self,height,width):
+		self.height = height
+		self.width = width
+	def Area(self):
+		return self.height *self.width
+def Compare_Area(Shape_a,Shape_b):
+	if Shape_a.Area() < Shape_b.Area():
+		print('a<b')
+	elif Shape_a.Area() == Shape_b.Area():
+		print('a=b')
+	else:
+		print('a>b')
+
+Shape_a = Circle(1)
+Shape_b = Retangle(2,2)
+Compare_Area(Shape_a,Shape_b)
+
+print(Circle(4).Area())
+print(Retangle(5,7).Area())
